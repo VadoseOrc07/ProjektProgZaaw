@@ -4,4 +4,8 @@ project(Programowanie_zaawansowane)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Programowanie_zaawansowane
-        Projekt.cpp)
+        Projekt.cpp
+        Wezel.h
+        Wezel.cpp
+        ListaDwukierunkowa.h
+        ListaDwukierunkowa.cpp)
