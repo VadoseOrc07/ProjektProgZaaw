@@ -8,4 +8,6 @@ add_executable(Programowanie_zaawansowane
         Wezel.h
         Wezel.cpp
         ListaDwukierunkowa.h
-        ListaDwukierunkowa.cpp)
+        ListaDwukierunkowa.cpp
+        IteratorListy.h
+        IteratorListy.cpp)

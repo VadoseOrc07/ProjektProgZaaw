@@ -10,6 +10,7 @@
 #include <string>
 
 class Wezel;
+class IteratorListy;
 
 /**
  * @class ListaDwukierunkowa
@@ -19,6 +20,7 @@ class Wezel;
  * aktualną liczbę elementów.
  */
 class ListaDwukierunkowa {
+    friend class IteratorListy;
 private:
     Wezel* poczatek_;
     Wezel* koniec_;

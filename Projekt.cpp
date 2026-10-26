@@ -1,4 +1,5 @@
 #include "ListaDwukierunkowa.h"
+#include "IteratorListy.h"
 
 #include <iostream>
 
@@ -38,7 +39,60 @@ int main() {
     if (!lista.usunPodIndeksem(100)) {
         std::cout << "Usuwanie pod nieprawidlowym indeksem odrzucone.\n";
     }
+    std::cout << "\n=== Iterator: przejscie do przodu ===\n";
 
+    IteratorListy iterator(lista);
+
+    while (iterator.czyWazny()) {
+        const std::string* wartosc = iterator.pobierzWartosc();
+
+        if (wartosc != nullptr) {
+            std::cout << *wartosc;
+        }
+
+        if (!iterator.przejdzDoNastepnego()) {
+            break;
+        }
+
+        std::cout << " <-> ";
+    }
+
+    std::cout << "\n\n=== Iterator: przejscie do tylu ===\n";
+
+    IteratorListy iteratorOdKonca(lista, true);
+
+    while (iteratorOdKonca.czyWazny()) {
+        const std::string* wartosc = iteratorOdKonca.pobierzWartosc();
+
+        if (wartosc != nullptr) {
+            std::cout << *wartosc;
+        }
+
+        if (!iteratorOdKonca.przejdzDoPoprzedniego()) {
+            break;
+        }
+
+        std::cout << " <-> ";
+    }
+
+    std::cout << "\n\n=== Iterator: nastepny i poprzedni ===\n";
+
+    IteratorListy iteratorRuchu(lista);
+
+    if (iteratorRuchu.czyWazny()) {
+        std::cout << "Aktualny element: "
+                  << *iteratorRuchu.pobierzWartosc() << '\n';
+
+        if (iteratorRuchu.przejdzDoNastepnego()) {
+            std::cout << "Nastepny element: "
+                      << *iteratorRuchu.pobierzWartosc() << '\n';
+        }
+
+        if (iteratorRuchu.przejdzDoPoprzedniego()) {
+            std::cout << "Poprzedni element: "
+                      << *iteratorRuchu.pobierzWartosc() << '\n';
+        }
+    }
     std::cout << "\n=== Czyszczenie listy ===\n";
 
     lista.wyczysc();
