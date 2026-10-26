@@ -10,4 +10,6 @@ add_executable(Programowanie_zaawansowane
         ListaDwukierunkowa.h
         ListaDwukierunkowa.cpp
         IteratorListy.h
-        IteratorListy.cpp)
+        IteratorListy.cpp
+        ListaFactory.h
+        ListaFactory.cpp)
